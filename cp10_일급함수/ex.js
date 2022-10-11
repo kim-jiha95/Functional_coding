@@ -121,3 +121,14 @@ withLogging(
         saveCurrentuserData(user);
     } // 함수 호출 전까지 실행 안됨
 )
+
+
+// 왜 함수에 대한 일반 데이터 값으로 전달하지 않고 함수를 전달할까?
+function withLogging(data) {
+    try {
+
+    } catch (error) {
+        logToSnapErrors(error)
+    }
+}
+withLogging(saveUserData(user)); //saveUserData는 try/catch 문맥 밖에서 부릅니다. saveUserData 함수에서 에러가 나면 try/catch안에서 처리가 안됩니다.
