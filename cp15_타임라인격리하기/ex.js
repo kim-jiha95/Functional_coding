@@ -93,4 +93,29 @@ function calc_cart_total() {
  0 1 0! 0 1 1 1 0 0 0 0
 */
 
+// 비동기 호출에서 명시적인 출력을 위해 리턴값 대신 콜백을 사용할 수 있음
+
+//동기
+function aync(a) {
+    return b
+}
+
+// 비동기
+function asnc_(a, cb) {
+    cb(a)
+}
+
+// 동기 함수는 리턴값을 사용하고 비동기 함수는 콜백을 사용함
+
+// 동
+function caller() {
+    action1(aync(a))
+}
+
+//비동
+function caller_() {
+    async(a, action1)
+}
+
+// 동기 함수에서 호출하는 곳은 리턴값을 사용해 액션을 부르고 비동기 함수에서 호출하는 곳은 액션을 콜백으로 전달함.
 
